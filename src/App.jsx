@@ -19,7 +19,7 @@ export const navItems = [
     icon: <Home className="h-4 w-4" />,
   },
   {
-    title: "Basic Calculator",
+    title: "想定賃貸額計算機",
     to: "/basic-calculator",
     icon: <Calculator className="h-4 w-4" />,
   },
