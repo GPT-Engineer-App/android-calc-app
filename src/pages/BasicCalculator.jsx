@@ -7,10 +7,17 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 const BasicCalculator = () => {
   const [purchasePrice, setPurchasePrice] = useState("");
   const [area, setArea] = useState("");
+  const [unitPrice, setUnitPrice] = useState("");
   const [remainingYears, setRemainingYears] = useState("");
+  const [completion, setCompletion] = useState("");
+  const [annualLandPriceIncrease, setAnnualLandPriceIncrease] = useState("");
+  const [expectedCompletionPrice, setExpectedCompletionPrice] = useState("");
+  const [expectedUnitPrice, setExpectedUnitPrice] = useState("");
   const [annualYield1br, setAnnualYield1br] = useState("");
   const [annualYield2br, setAnnualYield2br] = useState("");
   const [annualYield3br, setAnnualYield3br] = useState("");
+  const [expectedAnnualProfit, setExpectedAnnualProfit] = useState("");
+  const [netRentalPrice, setNetRentalPrice] = useState("");
   const [minUnionFee, setMinUnionFee] = useState("");
   const [maxUnionFee, setMaxUnionFee] = useState("");
 
@@ -40,11 +47,51 @@ const BasicCalculator = () => {
               />
             </div>
             <div>
+              <Label htmlFor="unitPrice">平米単価</Label>
+              <Input
+                id="unitPrice"
+                value={unitPrice}
+                onChange={(e) => setUnitPrice(e.target.value)}
+              />
+            </div>
+            <div>
               <Label htmlFor="remainingYears">竣工残り年数</Label>
               <Input
                 id="remainingYears"
                 value={remainingYears}
                 onChange={(e) => setRemainingYears(e.target.value)}
+              />
+            </div>
+            <div>
+              <Label htmlFor="completion">竣工</Label>
+              <Input
+                id="completion"
+                value={completion}
+                onChange={(e) => setCompletion(e.target.value)}
+              />
+            </div>
+            <div>
+              <Label htmlFor="annualLandPriceIncrease">周辺地価上昇率/年</Label>
+              <Input
+                id="annualLandPriceIncrease"
+                value={annualLandPriceIncrease}
+                onChange={(e) => setAnnualLandPriceIncrease(e.target.value)}
+              />
+            </div>
+            <div>
+              <Label htmlFor="expectedCompletionPrice">想定竣工時価格</Label>
+              <Input
+                id="expectedCompletionPrice"
+                value={expectedCompletionPrice}
+                onChange={(e) => setExpectedCompletionPrice(e.target.value)}
+              />
+            </div>
+            <div>
+              <Label htmlFor="expectedUnitPrice">想定平米単価</Label>
+              <Input
+                id="expectedUnitPrice"
+                value={expectedUnitPrice}
+                onChange={(e) => setExpectedUnitPrice(e.target.value)}
               />
             </div>
             <div>
@@ -77,6 +124,22 @@ const BasicCalculator = () => {
               </div>
             </div>
             <div>
+              <Label htmlFor="expectedAnnualProfit">想定年間総利益</Label>
+              <Input
+                id="expectedAnnualProfit"
+                value={expectedAnnualProfit}
+                onChange={(e) => setExpectedAnnualProfit(e.target.value)}
+              />
+            </div>
+            <div>
+              <Label htmlFor="netRentalPrice">純賃貸価格</Label>
+              <Input
+                id="netRentalPrice"
+                value={netRentalPrice}
+                onChange={(e) => setNetRentalPrice(e.target.value)}
+              />
+            </div>
+            <div>
               <Label>組合費 (毎月)</Label>
               <div className="space-y-2">
                 <div>
@@ -106,31 +169,31 @@ const BasicCalculator = () => {
           <CardContent className="space-y-4">
             <div>
               <Label>平米単価</Label>
-              <p>{/* Calculation for 平米単価 */}</p>
+              <p>{unitPrice}</p>
             </div>
             <div>
               <Label>竣工</Label>
-              <p>{/* Calculation for 竣工 */}</p>
+              <p>{completion}</p>
             </div>
             <div>
               <Label>周辺地価上昇率/年</Label>
-              <p>{/* Calculation for 周辺地価上昇率/年 */}</p>
+              <p>{annualLandPriceIncrease}</p>
             </div>
             <div>
               <Label>想定竣工時価格</Label>
-              <p>{/* Calculation for 想定竣工時価格 */}</p>
+              <p>{expectedCompletionPrice}</p>
             </div>
             <div>
               <Label>想定平米単価</Label>
-              <p>{/* Calculation for 想定平米単価 */}</p>
+              <p>{expectedUnitPrice}</p>
             </div>
             <div>
               <Label>想定年間総利益</Label>
-              <p>{/* Calculation for 想定年間総利益 */}</p>
+              <p>{expectedAnnualProfit}</p>
             </div>
             <div>
               <Label>純賃貸価格</Label>
-              <p>{/* Calculation for 純賃貸価格 */}</p>
+              <p>{netRentalPrice}</p>
             </div>
           </CardContent>
         </Card>
