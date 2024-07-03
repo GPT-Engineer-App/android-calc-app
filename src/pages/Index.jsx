@@ -9,7 +9,7 @@ const Index = () => {
       <h1 className="text-3xl">Calculator Hub</h1>
       <p>Select a calculator to get started:</p>
       <div className="space-y-2">
-        <Button onClick={() => navigate("/basic-calculator")}>Basic Calculator</Button>
+        <Button onClick={() => navigate("/basic-calculator")}>想定賃貸額計算機</Button>
         <Button onClick={() => navigate("/scientific-calculator")}>Scientific Calculator</Button>
         <Button onClick={() => navigate("/bmi-calculator")}>BMI Calculator</Button>
         <Button onClick={() => navigate("/currency-converter")}>Currency Converter</Button>
