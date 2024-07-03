@@ -20,6 +20,7 @@ const BasicCalculator = () => {
   const [netRentalPrice, setNetRentalPrice] = useState("");
   const [minUnionFee, setMinUnionFee] = useState("");
   const [maxUnionFee, setMaxUnionFee] = useState("");
+  const [finalRentalPrice, setFinalRentalPrice] = useState("");
 
   return (
     <div className="space-y-4">
@@ -159,6 +160,14 @@ const BasicCalculator = () => {
                   />
                 </div>
               </div>
+            </div>
+            <div>
+              <Label htmlFor="finalRentalPrice">最終想定賃貸価格</Label>
+              <Input
+                id="finalRentalPrice"
+                value={finalRentalPrice}
+                onChange={(e) => setFinalRentalPrice(e.target.value)}
+              />
             </div>
           </CardContent>
         </Card>
