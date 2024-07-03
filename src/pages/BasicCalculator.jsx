@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -21,6 +21,15 @@ const BasicCalculator = () => {
   const [minUnionFee, setMinUnionFee] = useState("");
   const [maxUnionFee, setMaxUnionFee] = useState("");
   const [finalRentalPrice, setFinalRentalPrice] = useState("");
+
+  useEffect(() => {
+    if (purchasePrice && area) {
+      const calculatedUnitPrice = parseFloat(purchasePrice) / parseFloat(area);
+      setUnitPrice(calculatedUnitPrice.toFixed(2));
+    } else {
+      setUnitPrice("");
+    }
+  }, [purchasePrice, area]);
 
   return (
     <div className="space-y-4">
@@ -52,7 +61,7 @@ const BasicCalculator = () => {
               <Input
                 id="unitPrice"
                 value={unitPrice}
-                onChange={(e) => setUnitPrice(e.target.value)}
+                readOnly
               />
             </div>
             <div>
