@@ -24,7 +24,7 @@ const BasicCalculator = () => {
   return (
     <div className="space-y-4">
       <h1 className="text-3xl text-center">想定賃貸額計算機</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 gap-4">
         <Card>
           <CardHeader>
             <CardTitle>入力欄</CardTitle>
@@ -159,41 +159,6 @@ const BasicCalculator = () => {
                   />
                 </div>
               </div>
-            </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle>表示欄</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div>
-              <Label>平米単価</Label>
-              <p>{unitPrice}</p>
-            </div>
-            <div>
-              <Label>竣工</Label>
-              <p>{completion}</p>
-            </div>
-            <div>
-              <Label>周辺地価上昇率/年</Label>
-              <p>{annualLandPriceIncrease}</p>
-            </div>
-            <div>
-              <Label>想定竣工時価格</Label>
-              <p>{expectedCompletionPrice}</p>
-            </div>
-            <div>
-              <Label>想定平米単価</Label>
-              <p>{expectedUnitPrice}</p>
-            </div>
-            <div>
-              <Label>想定年間総利益</Label>
-              <p>{expectedAnnualProfit}</p>
-            </div>
-            <div>
-              <Label>純賃貸価格</Label>
-              <p>{netRentalPrice}</p>
             </div>
           </CardContent>
         </Card>
