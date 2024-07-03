@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { InputGroup, InputLeftAddon } from "@chakra-ui/react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -42,11 +43,14 @@ const BasicCalculator = () => {
           <CardContent className="space-y-4">
             <div>
               <Label htmlFor="purchasePrice">購入価格/竣工時価格</Label>
-              <Input
-                id="purchasePrice"
-                value={purchasePrice}
-                onChange={(e) => setPurchasePrice(e.target.value)}
-              />
+              <InputGroup>
+                <InputLeftAddon>₱</InputLeftAddon>
+                <Input
+                  id="purchasePrice"
+                  value={purchasePrice}
+                  onChange={(e) => setPurchasePrice(e.target.value)}
+                />
+              </InputGroup>
             </div>
             <div>
               <Label htmlFor="area">面積</Label>
@@ -58,11 +62,14 @@ const BasicCalculator = () => {
             </div>
             <div>
               <Label htmlFor="unitPrice">平米単価</Label>
-              <Input
-                id="unitPrice"
-                value={unitPrice}
-                readOnly
-              />
+              <InputGroup>
+                <InputLeftAddon>₱</InputLeftAddon>
+                <Input
+                  id="unitPrice"
+                  value={unitPrice}
+                  readOnly
+                />
+              </InputGroup>
             </div>
             <div>
               <Label htmlFor="remainingYears">竣工残り年数</Label>
@@ -90,93 +97,123 @@ const BasicCalculator = () => {
             </div>
             <div>
               <Label htmlFor="expectedCompletionPrice">想定竣工時価格</Label>
-              <Input
-                id="expectedCompletionPrice"
-                value={expectedCompletionPrice}
-                onChange={(e) => setExpectedCompletionPrice(e.target.value)}
-              />
+              <InputGroup>
+                <InputLeftAddon>₱</InputLeftAddon>
+                <Input
+                  id="expectedCompletionPrice"
+                  value={expectedCompletionPrice}
+                  onChange={(e) => setExpectedCompletionPrice(e.target.value)}
+                />
+              </InputGroup>
             </div>
             <div>
               <Label htmlFor="expectedUnitPrice">想定平米単価</Label>
-              <Input
-                id="expectedUnitPrice"
-                value={expectedUnitPrice}
-                onChange={(e) => setExpectedUnitPrice(e.target.value)}
-              />
+              <InputGroup>
+                <InputLeftAddon>₱</InputLeftAddon>
+                <Input
+                  id="expectedUnitPrice"
+                  value={expectedUnitPrice}
+                  onChange={(e) => setExpectedUnitPrice(e.target.value)}
+                />
+              </InputGroup>
             </div>
             <div>
               <Label>周辺平均年間利回り</Label>
               <div className="space-y-2">
                 <div>
                   <Label htmlFor="annualYield1br">1br</Label>
-                  <Input
-                    id="annualYield1br"
-                    value={annualYield1br}
-                    onChange={(e) => setAnnualYield1br(e.target.value)}
-                  />
+                  <InputGroup>
+                    <InputLeftAddon>₱</InputLeftAddon>
+                    <Input
+                      id="annualYield1br"
+                      value={annualYield1br}
+                      onChange={(e) => setAnnualYield1br(e.target.value)}
+                    />
+                  </InputGroup>
                 </div>
                 <div>
                   <Label htmlFor="annualYield2br">2br</Label>
-                  <Input
-                    id="annualYield2br"
-                    value={annualYield2br}
-                    onChange={(e) => setAnnualYield2br(e.target.value)}
-                  />
+                  <InputGroup>
+                    <InputLeftAddon>₱</InputLeftAddon>
+                    <Input
+                      id="annualYield2br"
+                      value={annualYield2br}
+                      onChange={(e) => setAnnualYield2br(e.target.value)}
+                    />
+                  </InputGroup>
                 </div>
                 <div>
                   <Label htmlFor="annualYield3br">3br</Label>
-                  <Input
-                    id="annualYield3br"
-                    value={annualYield3br}
-                    onChange={(e) => setAnnualYield3br(e.target.value)}
-                  />
+                  <InputGroup>
+                    <InputLeftAddon>₱</InputLeftAddon>
+                    <Input
+                      id="annualYield3br"
+                      value={annualYield3br}
+                      onChange={(e) => setAnnualYield3br(e.target.value)}
+                    />
+                  </InputGroup>
                 </div>
               </div>
             </div>
             <div>
               <Label htmlFor="expectedAnnualProfit">想定年間総利益</Label>
-              <Input
-                id="expectedAnnualProfit"
-                value={expectedAnnualProfit}
-                onChange={(e) => setExpectedAnnualProfit(e.target.value)}
-              />
+              <InputGroup>
+                <InputLeftAddon>₱</InputLeftAddon>
+                <Input
+                  id="expectedAnnualProfit"
+                  value={expectedAnnualProfit}
+                  onChange={(e) => setExpectedAnnualProfit(e.target.value)}
+                />
+              </InputGroup>
             </div>
             <div>
               <Label htmlFor="netRentalPrice">純賃貸価格</Label>
-              <Input
-                id="netRentalPrice"
-                value={netRentalPrice}
-                onChange={(e) => setNetRentalPrice(e.target.value)}
-              />
+              <InputGroup>
+                <InputLeftAddon>₱</InputLeftAddon>
+                <Input
+                  id="netRentalPrice"
+                  value={netRentalPrice}
+                  onChange={(e) => setNetRentalPrice(e.target.value)}
+                />
+              </InputGroup>
             </div>
             <div>
               <Label>組合費 (毎月)</Label>
               <div className="space-y-2">
                 <div>
                   <Label htmlFor="minUnionFee">最低</Label>
-                  <Input
-                    id="minUnionFee"
-                    value={minUnionFee}
-                    onChange={(e) => setMinUnionFee(e.target.value)}
-                  />
+                  <InputGroup>
+                    <InputLeftAddon>₱</InputLeftAddon>
+                    <Input
+                      id="minUnionFee"
+                      value={minUnionFee}
+                      onChange={(e) => setMinUnionFee(e.target.value)}
+                    />
+                  </InputGroup>
                 </div>
                 <div>
                   <Label htmlFor="maxUnionFee">最大</Label>
-                  <Input
-                    id="maxUnionFee"
-                    value={maxUnionFee}
-                    onChange={(e) => setMaxUnionFee(e.target.value)}
-                  />
+                  <InputGroup>
+                    <InputLeftAddon>₱</InputLeftAddon>
+                    <Input
+                      id="maxUnionFee"
+                      value={maxUnionFee}
+                      onChange={(e) => setMaxUnionFee(e.target.value)}
+                    />
+                  </InputGroup>
                 </div>
               </div>
             </div>
             <div>
               <Label htmlFor="finalRentalPrice">最終想定賃貸価格</Label>
-              <Input
-                id="finalRentalPrice"
-                value={finalRentalPrice}
-                onChange={(e) => setFinalRentalPrice(e.target.value)}
-              />
+              <InputGroup>
+                <InputLeftAddon>₱</InputLeftAddon>
+                <Input
+                  id="finalRentalPrice"
+                  value={finalRentalPrice}
+                  onChange={(e) => setFinalRentalPrice(e.target.value)}
+                />
+              </InputGroup>
             </div>
           </CardContent>
         </Card>
